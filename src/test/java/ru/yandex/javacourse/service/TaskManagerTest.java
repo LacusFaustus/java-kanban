@@ -1,4 +1,10 @@
 import org.junit.jupiter.api.Test;
+import ru.yandex.javacourse.model.Epic;
+import ru.yandex.javacourse.model.Subtask;
+import ru.yandex.javacourse.model.Task;
+import ru.yandex.javacourse.service.InMemoryTaskManager;
+import ru.yandex.javacourse.service.TaskManager;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class TaskManagerTest {

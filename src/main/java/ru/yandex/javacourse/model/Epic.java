@@ -25,6 +25,7 @@ public class Epic extends Task {
     public void clearSubtaskIds() {
         subtaskIds.clear();
     }
+
     public void updateStatus(List<Subtask> subtasks) {
         if (subtasks.isEmpty()) {
             setStatus(Status.NEW);
@@ -51,6 +52,7 @@ public class Epic extends Task {
             setStatus(Status.IN_PROGRESS);
         }
     }
+
     @Override
     public String toString() {
         return "Epic{" +

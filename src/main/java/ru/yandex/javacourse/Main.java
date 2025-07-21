@@ -6,6 +6,8 @@ import ru.yandex.javacourse.service.TaskManager;
 import ru.yandex.javacourse.util.Managers;
 
 public class Main {
+    private static HistoryManager historyManager;
+
     public static void main(String[] args) {
         TaskManager taskManager = Managers.getDefault();
         HistoryManager historyManager = Managers.getDefaultHistory();
@@ -55,33 +57,8 @@ public class Main {
         printHistory(historyManager);
     }
 
-    private static void printAllTasks(TaskManager manager) {
-        System.out.println("Задачи:");
-        for (Task task : manager.getAllTasks()) {
-            System.out.println(task);
-        }
-
-        System.out.println("\nЭпики:");
-        for (Epic epic : manager.getAllEpics()) {
-            System.out.println(epic);
-            System.out.println("Подзадачи эпика " + epic.getName() + ":");
-            for (Subtask subtask : manager.getSubtasksByEpicId(epic.getId())) {
-                System.out.println("  " + subtask);
-            }
-        }
-
-        System.out.println("\nПодзадачи:");
-        for (Subtask subtask : manager.getAllSubtasks()) {
-            System.out.println(subtask);
-        }
-
-        System.out.println("\nИстория просмотров:");
-        for (Task task : manager.getHistory()) {
-            System.out.println(task);
-        }
-    }
-
     private static void printHistory(HistoryManager historyManager) {
+        Main.historyManager = historyManager;
         System.out.println("История просмотров:");
         for (Task task : historyManager.getHistory()) {
             System.out.println(task);

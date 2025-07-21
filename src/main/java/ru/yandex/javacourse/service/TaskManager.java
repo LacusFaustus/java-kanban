@@ -40,4 +40,8 @@ public interface TaskManager {
     void getSubtask(int id);
 
     void deleteEpic(int id);
+
+    void deleteSubtask(int id);
+
+    Task getTask(int id);
 }

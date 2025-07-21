@@ -179,4 +179,14 @@ public class InMemoryTaskManager implements TaskManager {
     public void deleteEpic(int id) {
 
     }
+
+    @Override
+    public void deleteSubtask(int id) {
+
+    }
+
+    @Override
+    public Task getTask(int id) {
+        return null;
+    }
 }
